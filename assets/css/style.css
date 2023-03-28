@@ -11,24 +11,36 @@
     justify-content: center;
     border: 2px solid red;
 }
-
+img{
+    display: block;
+    width: 100%;
+}
 .container {
     margin: auto;
-    width: 80%;
+    width: 70%;
 }
 
 .row-slider {
+    position: relative;
     display: flex;
     justify-content: center;
 }
 
 .items {
-    position: relative;
-    width: 50%;
+     wi
+    
 }
 
-.fa-angle-down,
-.fa-angle-up {
+.item {
+    display: none;
+}
+
+.item.active {
+   
+    display: block;
+}
+.prev,
+.next {
     position: absolute;
     color: red;
     cursor: pointer;
@@ -38,16 +50,16 @@
     height: 12px;
     text-align: center;
     border-radius: 50%;
-     
+
 }
 
-.fa-angle-up {
+.prev {
     top: 5%;
     left: 50%;
     transform: translate(-50%);
 }
 
-.fa-angle-down {
+.next {
     bottom: 5%;
     left: 50%;
     transform: translate(-50%);
