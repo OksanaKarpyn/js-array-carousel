@@ -2,11 +2,11 @@ const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
 
 let arrayImg = [
+    '<img class="item  first" src="./assets/img/02.webp" alt="foto" width="100%">',
     '<img class="item active" src="./assets/img/04.webp" alt="foto" width="100%">',
-    '<img class="item" src="./assets/img/02.webp" alt="foto" width="100%">',
     '<img class="item" src="./assets/img/03.webp" alt="foto" width="100%">',
     '<img class="item" src="./assets/img/01.webp" alt="foto" width="100%">',
-    '<img class="item" src="./assets/img/05.webp" alt="foto" width="100%">',
+    '<img class="item last" src="./assets/img/05.webp" alt="foto" width="100%">',
 ];
 console.log(arrayImg);
 
@@ -18,30 +18,39 @@ for (let i = 0; i < arrayImg.length; i++) {
 }
 
 
-
 // assegno una funzione al elemento prev
 prev.addEventListener('click', function () {
     let imgActive = document.querySelector('.item.active');
     // mi aggancio ad elem sucessivo cioe fratello ,creo un altra var
     boxImg = imgActive.nextElementSibling
-
+    // ciclo del infinito giro
+    if (imgActive.classList.contains('last')) { //quando active sara al ultimo elemento
+        boxImg = document.querySelector('.first'); //torna al inizio e cominci da capo
+    }
     // rimovo dal attuale active
-    imgActive.classList.remove('active')
+    imgActive.classList.remove('active');
     // agg al successivo fratello
-    boxImg.classList.add('active')
+    boxImg.classList.add('active');
 
 
 })
+
 // assegno una funzione al elemento next
 next.addEventListener('click', function () {
+
     let imgActive = document.querySelector('.item.active');
     // mi aggancio ad elem sucessivo cioe fratello ,creo un altra var
     boxImg = imgActive.nextElementSibling
 
+    // ciclo del infinito giro
+    if (imgActive.classList.contains('last')) { //quando active sara al ultimo elemento
+        boxImg = document.querySelector('.first'); //torna al inizio e cominci da capo
+    }
     // rimovo dal attuale active
-    imgActive.classList.remove('active')
+    imgActive.classList.remove('active');
+
     // agg al successivo fratello
-    boxImg.classList.add('active')
+    boxImg.classList.add('active');
 
 
 })

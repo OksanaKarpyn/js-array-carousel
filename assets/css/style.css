@@ -21,22 +21,26 @@ img{
 }
 
 .row-slider {
+    
     position: relative;
     display: flex;
     justify-content: center;
 }
 
 .items {
-     wi
+
+     overflow: hidden;
     
 }
 
 .item {
+  object-fit: cover;
     display: none;
 }
 
 .item.active {
-   
+    max-height: 300px;
+    overflow: hidden;
     display: block;
 }
 .prev,
